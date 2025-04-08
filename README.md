@@ -28,7 +28,7 @@
 
 ## 📂 폴더 및 파일 구조
 
-📁 Camera_Calibration_Project/
+ ``` 📁 Camera_Calibration_Project/
 ├── 📁 frames/                         # 코너 검출 이미지 저장 폴더
 │   ├── corner_0.png
 │   ├── corner_1.png
@@ -42,7 +42,7 @@
 ├── 📄 distortion_correction.py       # 렌즈 왜곡 보정 스크립트
 ├── 📄 test_image.jpg                 # 왜곡 보정 전 테스트 이미지
 ├── 📄 undistorted_result.jpg         # 왜곡 보정 후 결과 이미지
-└── 📄 README.md                      # 프로젝트 설명 문서
+└── 📄 README.md                      # 프로젝트 설명 문서   ``` 
 
 
 
