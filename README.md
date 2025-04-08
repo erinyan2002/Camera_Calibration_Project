@@ -68,12 +68,20 @@ https://github.com/user-attachments/assets/a9ed336d-227e-4a51-acb6-fc25a1407cfc
 
 ## 실행예시 화면 
 
+### Camera Calibration
+
+
+![image](https://github.com/user-attachments/assets/b518ad2f-a077-4797-8921-5e8f090cf370)
+
+
+### Lens Distortion Correction
+
 
 ![image](https://github.com/user-attachments/assets/aeabde7b-625f-4ba2-beb0-31275c072c6e)
 
 
 
-![image](https://github.com/user-attachments/assets/4eb93c7a-7ea1-4bcd-9ceb-b7f1a69ef6f4)
+
 
 
 
