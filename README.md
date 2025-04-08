@@ -48,57 +48,17 @@ Distortion coefficients:
 [[ 2.322465e-01 -1.917289e+00 -2.201176e-03 -2.026461e-03 5.093349e+00]]
 
 Reprojection error (RMSE): 2.1978...
-📂 2. 파라미터 확인 (check_camera_params.py)
-python
-Copy
-Edit
+
+---
+
+### 📂 2. 파라미터 확인 (`check_camera_params.py`)
+
+### ▶ 코드
+```python
 import numpy as np
 
 data = np.load('camera_params.npz')
-print("Camera matrix:\n", data['mtx'])
-print("Distortion coefficients:\n", data['dist'])
-print("Reprojection error (RMSE):", data['error'])
-✅ 저장된 .npz 파일이 잘 작동하는지 확인 가능
 
-🧽 3. 왜곡 보정 (distortion_correction.py)
-▶ 입력 이미지
-test_image.jpg : 직접 촬영한 왜곡된 체스보드 이미지
-
-▶ 처리 순서
-저장된 카메라 파라미터(mtx, dist) 로드
-
-cv2.getOptimalNewCameraMatrix 사용
-
-cv2.undistort 로 왜곡 제거
-
-결과 이미지 저장 및 시각화
-
-▶ 보정 결과 예시
-Original	Undistorted
-	
-보정 전후의 미세한 차이가 존재하며, 왜곡이 줄어들었음을 확인할 수 있음
-
-📦 결과 파일 요약
-파일명	설명
-chessboard.mp4	내 카메라로 촬영한 체스보드 영상
-camera_params.npz	내부파라미터, 왜곡계수, RMSE 저장
-test_image.jpg	보정 대상 체스보드 사진
-undistorted_result.jpg	왜곡 보정 결과 이미지
-✅ 실행 순서 요약
-bash
-Copy
-Edit
-# Step 1: 캘리브레이션 수행 및 camera_params.npz 저장
-$ python camera_calibration.py
-
-# Step 2: 저장된 파라미터 확인
-$ python check_camera_params.py
-
-# Step 3: 왜곡 보정 결과 확인
-$ python distortion_correction.py
-📈 결론 및 개선 방향
-RMSE 2.19 수준으로, 충분히 안정적인 파라미터 추정 결과
-
-왜곡 보정 결과가 미세하지만 유효함
-
-여러 각도에서 촬영된 프레임 수를 늘리면 더 정확한 보정 가능
+print("✅ Camera matrix:\n", data['mtx'])
+print("✅ Distortion coefficients:\n", data['dist'])
+print("✅ Reprojection error (RMSE):", data['error'])
