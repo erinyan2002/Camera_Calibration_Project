@@ -69,7 +69,8 @@ https://github.com/user-attachments/assets/a9ed336d-227e-4a51-acb6-fc25a1407cfc
 ## 실행예시 화면 
 
 
-![image](https://github.com/user-attachments/assets/7150a4de-50c5-4ca0-964c-1bf1d51991ee)
+![image](https://github.com/user-attachments/assets/aeabde7b-625f-4ba2-beb0-31275c072c6e)
+
 
 
 
