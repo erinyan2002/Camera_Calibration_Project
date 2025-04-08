@@ -31,6 +31,7 @@ https://github.com/user-attachments/assets/a9ed336d-227e-4a51-acb6-fc25a1407cfc
 
 
 
+---
 
 
 ▶ 2. 카메라 캘리브레이션 수행
@@ -86,6 +87,9 @@ dist: [0.2322, -1.9172, -0.0022, -0.0020, 5.0933]
 
 rmse: 2.1978
 
+---
+
+
 ▶ 3. 카메라 파라미터 확인 (check_camera_params.py)
 
 import numpy as np
@@ -94,6 +98,10 @@ data = np.load('camera_params.npz')
 print("Camera matrix:\n", data['mtx'])
 print("Distortion coefficients:\n", data['dist'])
 print("Reprojection error (RMSE):", data['error'])
+
+---
+
+
 
 ▶ 4. 렌즈 왜곡 보정
 
@@ -124,7 +132,7 @@ print("Reprojection error (RMSE):", data['error'])
 
 
 
-
+---
 
 
 📚 정리
