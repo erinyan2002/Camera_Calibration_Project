@@ -2,7 +2,7 @@
 
 ---
 
-#🌐 목표
+##🌐 목표
 
 내 카메라를 칼리브리언하기
 
@@ -16,7 +16,7 @@ distortion_correction.py
 
 ✅ 작업 정보
 
-▶ 1. Chessboard 출력 & 도영상 지정
+##▶ 1. Chessboard 출력 & 도영상 지정
 
 Chessboard Collection 참고
 
@@ -34,7 +34,7 @@ https://github.com/user-attachments/assets/a9ed336d-227e-4a51-acb6-fc25a1407cfc
 ---
 
 
-#▶ 2. 카메라 캘리브레이션 수행
+##▶ 2. 카메라 캘리브레이션 수행
 
 사용 스크립트: camera_calibration.py
 
@@ -52,6 +52,8 @@ cv2.calibrateCamera로 내부 파라미터 계산
 
 출력 이미지 예시 (코너 검출 프레임):
 
+
+
 ![corner_0](https://github.com/user-attachments/assets/8c34a2b8-303a-4674-904b-19569950df0d)
 
 
@@ -67,7 +69,9 @@ cv2.calibrateCamera로 내부 파라미터 계산
 
 Camera matrix:
 [[1.89298384e+03 0.00000000e+00 9.92168086e+02]
+
  [0.00000000e+00 1.89497962e+03 5.02348455e+02]
+ 
  [0.00000000e+00 0.00000000e+00 1.00000000e+00]]
 
 Distortion coefficients:
@@ -90,20 +94,19 @@ rmse: 2.1978
 ---
 
 
-▶ 3. 카메라 파라미터 확인 (check_camera_params.py)
+##▶ 3. 카메라 파라미터 확인 (check_camera_params.py)
 
-import numpy as np
 
-data = np.load('camera_params.npz')
-print("Camera matrix:\n", data['mtx'])
-print("Distortion coefficients:\n", data['dist'])
-print("Reprojection error (RMSE):", data['error'])
+
+![image](https://github.com/user-attachments/assets/a2b34d19-ec8b-4b20-9bdf-8150ab27e50e)
+
+
 
 ---
 
 
 
-▶ 4. 렌즈 왜곡 보정
+##▶ 4. 렌즈 왜곡 보정
 
 사용 스크립트: distortion_correction.py
 
@@ -136,3 +139,11 @@ print("Reprojection error (RMSE):", data['error'])
 
 
 📚 정리
+
+캘리브레이션 완료 및 파라미터 저장 (fx, fy, cx, cy, dist, rmse)
+
+왜곡 보정 결과 이미지 생성 완료
+
+모든 과정은 OpenCV 기반 Python으로 수행
+
+
