@@ -2,7 +2,7 @@
 
 ---
 
-🌐 목표
+#🌐 목표
 
 내 카메라를 칼리브리언하기
 
@@ -34,7 +34,7 @@ https://github.com/user-attachments/assets/a9ed336d-227e-4a51-acb6-fc25a1407cfc
 ---
 
 
-▶ 2. 카메라 캘리브레이션 수행
+#▶ 2. 카메라 캘리브레이션 수행
 
 사용 스크립트: camera_calibration.py
 
