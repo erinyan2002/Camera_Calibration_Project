@@ -26,6 +26,23 @@
 ### 3. distortion_correction.py
 - 입력 이미지(test_image.jpg)에서 왜곡 제거된 결과 저장
 
+## 📂 폴더 및 파일 구조
+
+📁 Camera_Calibration_Project/
+├── 📁 frames/ │
+├── corner_0.png │ 
+├── corner_1.png │ 
+├── corner_2.png │ 
+├── corner_3.png │ 
+└── corner_4.png 
+├── 📄 camera_calibration.py 
+├── 📄 camera_params.npz 
+├── 📄 check_camera_params.py
+├── 📄 chessboard.mp4 
+├── 📄 distortion_correction.py 
+├── 📄 README.md 
+├── 📄 test_image.jpg 
+└── 📄 undistorted_result.jpg
 
 ✅ 작업 정보
 
@@ -86,9 +103,17 @@ https://github.com/user-attachments/assets/a9ed336d-227e-4a51-acb6-fc25a1407cfc
 
 ...
 
+## 📊 캘리브레이션 결과 요약
 
+| 파라미터 | 값 |
+|----------|------------------|
+| fx       | 1892.98          |
+| fy       | 1894.97          |
+| cx       | 992.17           |
+| cy       | 502.35           |
+| dist     | [0.2322, -1.9172, -0.0022, -0.0020, 5.0933] |
+| RMSE     | 2.1978           |
 
-결과 출력 예시:
 
 Camera matrix:
 [[1.89298384e+03 0.00000000e+00 9.92168086e+02]
@@ -102,17 +127,6 @@ Distortion coefficients:
 
 Reprojection error (RMSE): 2.197819866097877
 
-fx: 1892.98
-
-fy: 1894.97
-
-cx: 992.17
-
-cy: 502.35
-
-dist: [0.2322, -1.9172, -0.0022, -0.0020, 5.0933]
-
-rmse: 2.1978
 
 ---
 
