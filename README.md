@@ -1,4 +1,4 @@
-# 🧮 Homework #3 - Camera Calibration
+# 🧮 Homework #3 - Camera Calibration & Lens Distortion Correction
 
 ---
 
@@ -6,14 +6,25 @@
 
 ## 내 카메라를 칼리브리언하기
 
+## 설명
 
-🔧 사용 프로그램
+> 본 프로젝트는 OpenCV를 활용해 체스보드 영상을 기반으로 카메라의 내부 파라미터(fx, fy, cx, cy 등)를 추정하고,
+> 이를 바탕으로 렌즈 왜곡을 보정하는 전 과정을 수행하는 프로젝트입니다.
 
-camera_calibration.py
+---
 
-check_camera_params.py
+## 📜 사용 스크립트 설명
 
-distortion_correction.py
+### 1. camera_calibration.py
+- 입력: 체스보드 영상 (mp4)
+- 출력: camera_params.npz (내부 파라미터 포함)
+
+### 2. check_camera_params.py
+- camera_params.npz 로드 후 파라미터 확인 출력
+
+### 3. distortion_correction.py
+- 입력 이미지(test_image.jpg)에서 왜곡 제거된 결과 저장
+
 
 ✅ 작업 정보
 
@@ -29,6 +40,14 @@ A4 용지에 체스보드 출력 후 다양한 각도에서 영상 촬영
 
 
 https://github.com/user-attachments/assets/a9ed336d-227e-4a51-acb6-fc25a1407cfc
+
+
+
+## 실행예시 화면 
+
+
+![image](https://github.com/user-attachments/assets/7150a4de-50c5-4ca0-964c-1bf1d51991ee)
+
 
 
 
