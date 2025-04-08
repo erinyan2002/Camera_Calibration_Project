@@ -42,7 +42,8 @@
 ├── 📄 distortion_correction.py       # 렌즈 왜곡 보정 스크립트
 ├── 📄 test_image.jpg                 # 왜곡 보정 전 테스트 이미지
 ├── 📄 undistorted_result.jpg         # 왜곡 보정 후 결과 이미지
-└── 📄 README.md                      # 프로젝트 설명 문서   ``` 
+└── 📄 README.md                      # 프로젝트 설명 문서
+``` 
 
 
 
