@@ -44,6 +44,9 @@
 ├── 📄 test_image.jpg 
 └── 📄 undistorted_result.jpg
 
+
+---
+
 ✅ 작업 정보
 
 ## ▶ 1. Chessboard 출력 & 도영상 지정
