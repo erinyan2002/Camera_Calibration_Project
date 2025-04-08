@@ -26,6 +26,13 @@ A4 용지에 체스보드 출력 후 다양한 각도에서 영상 촬영
 
 
 
+
+https://github.com/user-attachments/assets/a9ed336d-227e-4a51-acb6-fc25a1407cfc
+
+
+
+
+
 ▶ 2. 카메라 캘리브레이션 수행
 
 사용 스크립트: camera_calibration.py
@@ -44,8 +51,13 @@ cv2.calibrateCamera로 내부 파라미터 계산
 
 출력 이미지 예시 (코너 검출 프레임):
 
-frames/corner_0.png
-frames/corner_1.png
+![corner_0](https://github.com/user-attachments/assets/8c34a2b8-303a-4674-904b-19569950df0d)
+
+
+
+
+![corner_4](https://github.com/user-attachments/assets/a180f673-f850-4eca-be38-d8f49fa5f2e0)
+
 ...
 
 
@@ -93,15 +105,23 @@ print("Reprojection error (RMSE):", data['error'])
 
 시각화 및 비교
 
-입력 이미지:
-test_image.jpg
+입력 이미지: Original
 
-출력 이미지:
-undistorted_result.jpg
 
-Original
+![test_image](https://github.com/user-attachments/assets/1951c5dc-cbfe-4911-92d5-38d8ec4e090f)
 
-Undistorted
+
+
+
+출력 이미지: Undistorted
+
+
+
+
+
+
+![undistorted_result](https://github.com/user-attachments/assets/8bb03446-a68d-46ee-bd01-fe217f2bafdf)
+
 
 
 
