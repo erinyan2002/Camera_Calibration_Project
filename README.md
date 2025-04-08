@@ -1,64 +1,110 @@
 # 🧮 Homework #3 - Camera Calibration
 
-## 📌 과제 개요
-카메라 영상 내에서 촬영된 체스보드 패턴을 활용해 **내 카메라의 내·외부 파라미터(Camera Matrix, Distortion Coefficients 등)** 를 추정하고, 왜곡된 이미지를 보정하는 것이 본 과제의 목표입니다.
-
 ---
 
-## 📁 프로젝트 구조
+🌐 목표
 
-📦camera_calibration_hw3 ┣ 📂frames/ # 검출된 체스보드 코너 시각화 이미지 저장 ┃ ┣ corner_1.png ┃ ┣ corner_2.png ┃ ┗ ... ┣ 📹 chessboard.mp4 # 직접 촬영한 체스보드 영상 ┣ 🖼️ test_image.jpg # 왜곡 보정 테스트용 체스보드 이미지 ┣ 🧠 camera_calibration.py # 체스보드 코너 검출 및 파라미터 계산 스크립트 ┣ 🧠 distortion_correction.py # 왜곡 이미지 보정 스크립트 ┣ 🧠 check_camera_params.py # 저장된 .npz 파일 내 파라미터 확인용 ┣ 📦 camera_params.npz # 캘리브레이션 결과 저장파일 ┗ 📄 README.md # 과제 설명 및 사용 가이드
+내 카메라를 칼리브리언하기
 
-yaml
-Copy
-Edit
+🔧 사용 프로그램
 
----
+camera_calibration.py
 
-## 🎥 체스보드 영상 촬영
+check_camera_params.py
 
-- **사용 장비**: 노트북 내장 카메라
-- **촬영 조건**:
-  - 다양한 각도에서 체스보드 촬영
-  - A4 용지 출력 (출처: [Chessboard Collection](https://calib.io/pages/downloads))
+distortion_correction.py
 
-> 영상 예시:
-> ![chessboard](./test_image.jpg)
+✅ 작업 정보
 
----
+▶ 1. Chessboard 출력 & 도영상 지정
 
-## 📍 1. 카메라 캘리브레이션 (`camera_calibration.py`)
+Chessboard Collection 참고
 
-### ▶ 주요 처리 흐름
+A4 용지에 체스보드 출력 후 다양한 각도에서 영상 촬영
 
-1. 영상에서 프레임 추출
-2. 각 프레임에서 체스보드 코너 검출 (`cv2.findChessboardCorners`)
-3. 검출된 코너를 저장하고 시각화 (`cv2.drawChessboardCorners`)
-4. 코너 좌표를 바탕으로 카메라 캘리브레이션 수행 (`cv2.calibrateCamera`)
-5. 결과 저장 (`camera_params.npz`)
+예시 영상: 
 
-### ▶ 출력 예시
-```text
+
+
+▶ 2. 카메라 캘리브레이션 수행
+
+사용 스크립트: camera_calibration.py
+
+처리 흐름:
+
+동영상에서 프레임 추출
+
+각 프레임에서 체스보드 코너 검출 (cv2.findChessboardCorners)
+
+검출된 코너 시각화 및 저장 (cv2.drawChessboardCorners)
+
+cv2.calibrateCamera로 내부 파라미터 계산
+
+결과를 camera_params.npz로 저장 (mtx, dist, rvecs, tvecs, error)
+
+출력 이미지 예시 (코너 검출 프레임):
+
+frames/corner_0.png
+frames/corner_1.png
+...
+
+
+
+결과 출력 예시:
+
 Camera matrix:
-[[9.0039384e+03 0.0000000e+00 9.9216086e+02]
- [0.0000000e+00 1.8949796e+03 5.0234846e+02]
- [0.0000000e+00 0.0000000e+00 1.0000000e+00]]
+[[1.89298384e+03 0.00000000e+00 9.92168086e+02]
+ [0.00000000e+00 1.89497962e+03 5.02348455e+02]
+ [0.00000000e+00 0.00000000e+00 1.00000000e+00]]
 
 Distortion coefficients:
-[[ 2.322465e-01 -1.917289e+00 -2.201176e-03 -2.026461e-03 5.093349e+00]]
+[[ 2.32246521e-01 -1.91728901e+00 -2.20117167e-03 -2.02646111e-03 5.09334929e+00]]
 
-Reprojection error (RMSE): 2.1978...
+Reprojection error (RMSE): 2.197819866097877
 
----
+fx: 1892.98
 
-## 📂 2. 파라미터 확인 (`check_camera_params.py`)
+fy: 1894.97
 
-### ▶ 코드
-```python
+cx: 992.17
+
+cy: 502.35
+
+dist: [0.2322, -1.9172, -0.0022, -0.0020, 5.0933]
+
+rmse: 2.1978
+
+▶ 3. 카메라 파라미터 확인 (check_camera_params.py)
+
 import numpy as np
 
 data = np.load('camera_params.npz')
+print("Camera matrix:\n", data['mtx'])
+print("Distortion coefficients:\n", data['dist'])
+print("Reprojection error (RMSE):", data['error'])
 
-print("✅ Camera matrix:\n", data['mtx'])
-print("✅ Distortion coefficients:\n", data['dist'])
-print("✅ Reprojection error (RMSE):", data['error'])
+▶ 4. 렌즈 왜곡 보정
+
+사용 스크립트: distortion_correction.py
+
+캘리브레이션 결과 불러오기 (camera_params.npz)
+
+왜곡 보정 수행: cv2.undistort
+
+시각화 및 비교
+
+입력 이미지:
+test_image.jpg
+
+출력 이미지:
+undistorted_result.jpg
+
+Original
+
+Undistorted
+
+
+
+
+
+📚 정리
