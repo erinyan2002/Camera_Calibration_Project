@@ -4,7 +4,8 @@
 
 ## 🌐 목표
 
-내 카메라를 칼리브리언하기
+## 내 카메라를 칼리브리언하기
+
 
 🔧 사용 프로그램
 
@@ -40,15 +41,15 @@ https://github.com/user-attachments/assets/a9ed336d-227e-4a51-acb6-fc25a1407cfc
 
 처리 흐름:
 
-동영상에서 프레임 추출
+- 동영상에서 프레임 추출
 
-각 프레임에서 체스보드 코너 검출 (cv2.findChessboardCorners)
+- 각 프레임에서 체스보드 코너 검출 (cv2.findChessboardCorners)
 
-검출된 코너 시각화 및 저장 (cv2.drawChessboardCorners)
+- 검출된 코너 시각화 및 저장 (cv2.drawChessboardCorners)
 
-cv2.calibrateCamera로 내부 파라미터 계산
+- cv2.calibrateCamera로 내부 파라미터 계산
 
-결과를 camera_params.npz로 저장 (mtx, dist, rvecs, tvecs, error)
+- 결과를 camera_params.npz로 저장 (mtx, dist, rvecs, tvecs, error)
 
 출력 이미지 예시 (코너 검출 프레임):
 
