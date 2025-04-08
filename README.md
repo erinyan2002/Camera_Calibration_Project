@@ -51,7 +51,7 @@ Reprojection error (RMSE): 2.1978...
 
 ---
 
-### 📂 2. 파라미터 확인 (`check_camera_params.py`)
+## 📂 2. 파라미터 확인 (`check_camera_params.py`)
 
 ### ▶ 코드
 ```python
