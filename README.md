@@ -256,9 +256,8 @@ pip install opencv-python numpy
 🏁 실행 방법
 
 
- ``` python ar_pose_estimation.py
-
-
+```
+python ar_pose_estimation.py
 ```
 1. 웹캠이 자동으로 켜집니다.
 
