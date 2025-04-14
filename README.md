@@ -202,4 +202,20 @@ Reprojection error (RMSE): 2.197819866097877
 
 모든 과정은 OpenCV 기반 Python으로 수행
 
+---
+
+## Homework #4: Camera Pose Estimation & AR
+
+- 체스보드를 통해 카메라 pose 추정
+- 알파벳 A 도형을 영상 위에 3D처럼 AR로 렌더링
+
+### 🎯 결과 이미지
+
+
+
+
+![결과_1](https://github.com/user-attachments/assets/4c5c1c87-31da-4e42-b4a1-64be944a57d0)
+
+
+
 
