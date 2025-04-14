@@ -28,21 +28,23 @@
 
 ## 📂 폴더 및 파일 구조
 
-📁 Camera_Calibration_Project/
-├── 📁 frames/ │
-├── corner_0.png │ 
-├── corner_1.png │ 
-├── corner_2.png │ 
-├── corner_3.png │ 
-└── corner_4.png 
-├── 📄 camera_calibration.py 
-├── 📄 camera_params.npz 
-├── 📄 check_camera_params.py
-├── 📄 chessboard.mp4 
-├── 📄 distortion_correction.py 
-├── 📄 README.md 
-├── 📄 test_image.jpg 
-└── 📄 undistorted_result.jpg
+ ``` 📁 Camera_Calibration_Project/
+├── 📁 frames/                         # 코너 검출 이미지 저장 폴더
+│   ├── corner_0.png
+│   ├── corner_1.png
+│   ├── corner_2.png
+│   ├── corner_3.png
+│   └── corner_4.png
+├── 📄 camera_calibration.py           # 카메라 캘리브레이션 실행 스크립트
+├── 📄 camera_params.npz              # 저장된 카메라 내부 파라미터
+├── 📄 check_camera_params.py         # 파라미터 불러오기 및 확인
+├── 📄 chessboard.mp4                 # 체스보드 촬영 영상
+├── 📄 distortion_correction.py       # 렌즈 왜곡 보정 스크립트
+├── 📄 test_image.jpg                 # 왜곡 보정 전 테스트 이미지
+├── 📄 undistorted_result.jpg         # 왜곡 보정 후 결과 이미지
+└── 📄 README.md                      # 프로젝트 설명 문서
+``` 
+
 
 
 ---
@@ -68,8 +70,22 @@ https://github.com/user-attachments/assets/a9ed336d-227e-4a51-acb6-fc25a1407cfc
 
 ## 실행예시 화면 
 
+### Camera Calibration
 
-![image](https://github.com/user-attachments/assets/7150a4de-50c5-4ca0-964c-1bf1d51991ee)
+
+![image](https://github.com/user-attachments/assets/b518ad2f-a077-4797-8921-5e8f090cf370)
+
+
+### Lens Distortion Correction
+
+
+![image](https://github.com/user-attachments/assets/aeabde7b-625f-4ba2-beb0-31275c072c6e)
+
+
+
+
+
+
 
 
 
