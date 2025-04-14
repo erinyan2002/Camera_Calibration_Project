@@ -46,7 +46,6 @@
 ``` 
 
 
-
 ---
 
 ✅ 작업 정보
@@ -204,17 +203,82 @@ Reprojection error (RMSE): 2.197819866097877
 
 ---
 
-## Homework #4: Camera Pose Estimation & AR
+# Homework #4: Camera Pose Estimation & AR
 
-- 체스보드를 통해 카메라 pose 추정
-- 알파벳 A 도형을 영상 위에 3D처럼 AR로 렌더링
+이 프로젝트는 체스보드 패턴을 인식하여 카메라의 자세(Pose)를 추정하고, OpenCV를 활용해 사용자 정의 3D 도형을 실제 영상 위에 증강현실(AR)처럼 표시하는 프로그램입니다.  
+이전에 수행한 카메라 캘리브레이션 결과(camera_params.npz)를 기반으로 합니다.
 
-### 🎯 결과 이미지
+---
 
+## 📌 주요 기능
 
+- 저장된 카메라 내부 파라미터(.npz) 불러오기
+- 체스보드 코너 인식 (`cv.findChessboardCorners`)
+- 카메라 자세 추정 (`cv.solvePnP`)
+- 3D 오브젝트를 이미지에 투영 (`cv.projectPoints`)
+- AR 도형을 실시간으로 렌더링 및 자동 스크린샷 저장
 
+---
+
+## 📁 주요 파일 설명
+
+| 파일명 | 설명 |
+|--------|------|
+| `ar_pose_estimation.py` | AR 도형을 영상에 렌더링하는 메인 코드 |
+| `camera_params.npz`     | 캘리브레이션된 카메라 내부 파라미터 |
+| `ar_result.jpg`         | 실행 결과 캡처 이미지 |
+| `README.md`             | 프로젝트 설명 문서 |
+
+---
+
+## 📸 실행 결과 예시
+
+아래 이미지는 체스보드 위에 AR 도형이 성공적으로 표시된 장면입니다.  
+도형은 알파벳 "A"의 형태로 구성되어 있으며, 카메라 위치에 따라 움직임이 반응합니다.
 
 ![결과_1](https://github.com/user-attachments/assets/4c5c1c87-31da-4e42-b4a1-64be944a57d0)
+
+---
+
+## ⚙️ 실행 환경
+
+- Python 3.10 이상
+- OpenCV 4.x
+- NumPy
+
+설치 명령어:
+```bash
+pip install opencv-python numpy
+ ```
+
+---
+
+🏁 실행 방법
+
+
+ ``` python ar_pose_estimation.py
+
+
+```
+1. 웹캠이 자동으로 켜집니다.
+
+2. 체스보드 패턴(내부 코너 9x6)을 카메라에 비춰 주세요.
+
+3. 체스보드가 인식되면, 알파벳 A 모양 도형이 화면 위에 떠오릅니다.
+
+4. 첫 성공 시 ar_result.jpg 이미지가 자동 저장됩니다.
+
+5. ESC 키를 누르면 종료됩니다.
+
+---
+
+## ✅ 마무리하며
+
+이번 프로젝트를 통해 2D 영상에서 3D 공간 정보를 추정하고,  
+실제 환경에 가상의 도형을 시각화하는 AR 기술의 기본 원리를 직접 체험할 수 있었습니다.
+
+
+
 
 
 
